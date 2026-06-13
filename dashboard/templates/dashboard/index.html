@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup Betting Probability</title>
+    <meta name="description"
+        content="Live World Cup family betting probability dashboard powered by real odds and match results.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style>
+        :root {
+            --bg-color: #080b12;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-gold: #ffcc00;
+            --accent-blue: #00d2ff;
+            --accent-green: #00e676;
+            --text-primary: #ffffff;
+            --text-secondary: #8a8fa8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image:
+                radial-gradient(ellipse at 20% 20%, rgba(0, 210, 255, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(255, 204, 0, 0.06) 0%, transparent 50%);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 24px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .trophy {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 8px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .last-updated {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 4px 12px;
+            background: rgba(0, 230, 118, 0.1);
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--accent-green);
+            letter-spacing: 0.3px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h2 {
+            margin: 0 0 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        #prob-chart {
+            width: 100%;
+            min-height: 700px;
+        }
+
+        /* Prize Pool Styles */
+        .prize-pool-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .prize-total {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.15) 0%, rgba(0, 210, 255, 0.15) 100%);
+            border: 2px solid rgba(255, 204, 0, 0.4);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .prize-total-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .prize-total-amount {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .prize-tiers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .prize-tier {
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .prize-tier:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .prize-tier.first {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.25) 0%, rgba(255, 140, 0, 0.15) 100%);
+            border: 2px solid rgba(255, 204, 0, 0.5);
+        }
+
+        .prize-tier.second {
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.25) 0%, rgba(169, 169, 169, 0.15) 100%);
+            border: 2px solid rgba(192, 192, 192, 0.5);
+        }
+
+        .prize-tier.third {
+            background: linear-gradient(135deg, rgba(205, 127, 50, 0.25) 0%, rgba(184, 115, 51, 0.15) 100%);
+            border: 2px solid rgba(205, 127, 50, 0.5);
+        }
+
+        .prize-medal {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        .prize-tier.second .prize-medal {
+            animation-delay: 0.2s;
+        }
+
+        .prize-tier.third .prize-medal {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .prize-position {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .prize-amount {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .prize-first .prize-amount {
+            color: var(--accent-gold);
+        }
+
+        .prize-second .prize-amount {
+            color: #c0c0c0;
+        }
+
+        .prize-third .prize-amount {
+            color: #cd7f32;
+        }
+
+        .prize-distribution {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Team Status */
+        .player-block {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .player-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .player-block-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .picks-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .pill-active {
+            background: rgba(0, 230, 118, 0.1);
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            color: #00e676;
+        }
+
+        .pill-eliminated {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #444;
+            text-decoration: line-through;
+        }
+
+        .pill-risk {
+            background: rgba(255, 80, 80, 0.1);
+            border: 1px solid rgba(255, 80, 80, 0.3);
+            color: #ff6b6b;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .dot-active {
+            background: #00e676;
+        }
+
+        .dot-eliminated {
+            background: #444;
+        }
+
+        .dot-risk {
+            background: #ff6b6b;
+        }
+
+        .status-legend {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.68rem;
+            color: var(--text-secondary);
+        }
+
+        /* Upcoming Matches */
+        .match-row {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .match-row:last-child {
+            border-bottom: none;
+        }
+
+        .match-time {
+            font-size: 0.68rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .match-teams {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .match-team {
+            flex: 1;
+        }
+
+        .match-team-right {
+            text-align: right;
+        }
+
+        .match-team-name {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .match-pickers {
+            font-size: 0.65rem;
+            color: var(--accent-gold);
+            margin-top: 2px;
+        }
+
+        .match-vs {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            flex-shrink: 0;
+        }
+
+        /* Scrollable wrappers */
+        .scroll-box {
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .scroll-box-sm {
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        @media (max-width: 900px) {
+            .prize-tiers {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <div class="trophy">🏆</div>
+            <h1>Hati World Cup 2026<br>Betting Dashboard</h1>
+            <p class="subtitle">Family Betting Pool · Live Odds + Match Form</p>
+            <span class="last-updated">⚡ Odds updated: {{ last_updated }}</span>
+        </header>
+
+        <div class="dashboard-grid">
+
+            <!-- Prize Pool -->
+            <div class="card">
+                <h2>Prize Pool</h2>
+                <p class="card-subtitle">Total winnings</p>
+                <div class="prize-pool-container">
+                    <div class="prize-total">
+                        <div class="prize-total-label">Total Prize Pool</div>
+                        <div class="prize-total-amount">NU 24,000</div>
+                    </div>
+                    <div class="prize-tiers">
+                        <div class="prize-tier first">
+                            <span class="prize-medal">🥇</span>
+                            <div class="prize-position">1st Place</div>
+                            <div class="prize-amount prize-first">NU 15,000</div>
+                            <div class="prize-distribution">62.5%</div>
+                        </div>
+                        <div class="prize-tier second">
+                            <span class="prize-medal">🥈</span>
+                            <div class="prize-position">2nd Place</div>
+                            <div class="prize-amount prize-second">NU 5,000</div>
+                            <div class="prize-distribution">20.8%</div>
+                        </div>
+                        <div class="prize-tier third">
+                            <span class="prize-medal">🥉</span>
+                            <div class="prize-position">3rd Place</div>
+                            <div class="prize-amount prize-third">NU 4,000</div>
+                            <div class="prize-distribution">16.7%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Card -->
+            <div class="card">
+                <h2>Win Probability Engine</h2>
+                <p class="card-subtitle">Ranking</p>
+                <div id="prob-chart"></div>
+            </div>
+
+            <!-- Team Status -->
+            <div class="card">
+                <h2>Team Status</h2>
+                <p class="card-subtitle">Your picks · live elimination tracker</p>
+
+                <div class="status-legend">
+                    <div class="legend-item"><span class="dot dot-active"></span> Still in</div>
+                    <div class="legend-item"><span class="dot dot-risk"></span> At risk</div>
+                    <div class="legend-item"><span class="dot dot-eliminated"></span> Eliminated</div>
+                </div>
+
+                <div class="scroll-box">
+                    {% for p in probabilities %}
+                    <div class="player-block">
+                        <div class="player-block-name">{{ p.name }}</div>
+                        <div class="picks-row">
+                            {% for pick in p.picks %}
+                            {% if pick.is_eliminated %}
+                            <span class="pill pill-eliminated">
+                                <span class="dot dot-eliminated"></span>
+                                {{ pick.team }}
+                            </span>
+                            {% elif pick.at_risk %}
+                            <span class="pill pill-risk">
+                                <span class="dot dot-risk"></span>
+                                {{ pick.team }}
+                            </span>
+                            {% else %}
+                            <span class="pill pill-active">
+                                <span class="dot dot-active"></span>
+                                {{ pick.team }}
+                            </span>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Upcoming Matches -->
+            <div class="card">
+                <h2>Upcoming Matches</h2>
+                <p class="card-subtitle">Only your picked teams · Bhutan time</p>
+                <div class="scroll-box-sm">
+                    {% for m in upcoming_matches %}
+                    <div class="match-row">
+                        <div class="match-time">{{ m.date }} · {{ m.time }} {{ m.timezone }}</div>
+                        <div class="match-teams">
+
+                            <div class="match-team">
+                                <div class="match-team-name">{{ m.team1 }}</div>
+                                {% if m.team1_pickers %}
+                                <div class="match-pickers">{{ m.team1_pickers|join:", " }}</div>
+                                {% endif %}
+                            </div>
+
+                            <div class="match-vs">VS</div>
+
+                            <div class="match-team match-team-right">
+                                <div class="match-team-name">{{ m.team2 }}</div>
+                                {% if m.team2_pickers %}
+                                <div class="match-pickers">{{ m.team2_pickers|join:", " }}</div>
+                                {% endif %}
+                            </div>
+
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p style="font-size: 0.8rem; color: var(--text-secondary);">No upcoming matches found.</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const rawData = {{ chart_data| safe }};
+        const chartData = rawData.map(item => ({
+            x: item.name,
+            y: item.probability
+        }));
+
+        var options = {
+            series: [{ name: 'Win Probability', data: chartData }],
+            chart: {
+                type: 'bar',
+                height: 700,
+                toolbar: { show: false },
+                background: 'transparent',
+                foreColor: '#8a8fa8',
+                animations: { enabled: true, easing: 'easeinout', speed: 800 }
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: 6,
+                    horizontal: true,
+                    barHeight: '65%',
+                    distributed: true,
+                }
+            },
+            colors: [
+                '#ffcc00', '#00d2ff', '#ff6b6b', '#00e676', '#ff8c00',
+                '#c471ed', '#12c2e9', '#f64f59', '#43e97b', '#38f9d7',
+                '#fa709a', '#fee140', '#30cfd0', '#667eea', '#f7971e',
+                '#fda085', '#89f7fe', '#a18cd1', '#fccb90', '#d4fc79',
+                '#84fab0', '#8fd3f4'
+            ],
+            dataLabels: {
+                enabled: true,
+                formatter: val => val + '%',
+                style: { colors: ['#fff'], fontWeight: 700, fontSize: '11px' },
+                offsetX: 5
+            },
+            xaxis: {
+                labels: { formatter: val => val + '%' },
+                title: { text: 'Win Probability (%)' },
+                max: 100
+            },
+            yaxis: {
+                labels: {
+                    style: { fontSize: '12px', fontWeight: 600, colors: '#fff' },
+                    maxWidth: 180
+                }
+            },
+            grid: { borderColor: 'rgba(255,255,255,0.06)' },
+            theme: { mode: 'dark' },
+            legend: { show: false },
+            tooltip: {
+                theme: 'dark',
+                y: { formatter: val => val + '%' }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector('#prob-chart'), options);
+        chart.render();
+    </script>
+</body>
+
+</html>
