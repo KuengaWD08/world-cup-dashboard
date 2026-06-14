@@ -1508,139 +1508,10 @@
   }
 },
 {
-  "model": "dashboard.teampick",
-  "pk": 1,
+  "model": "dashboard.participant",
+  "pk": 27,
   "fields": {
-    "participant": 5,
-    "team": 8
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 2,
-  "fields": {
-    "participant": 5,
-    "team": 9
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 3,
-  "fields": {
-    "participant": 5,
-    "team": 1
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 4,
-  "fields": {
-    "participant": 6,
-    "team": 5
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 5,
-  "fields": {
-    "participant": 6,
-    "team": 14
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 6,
-  "fields": {
-    "participant": 7,
-    "team": 2
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 7,
-  "fields": {
-    "participant": 7,
-    "team": 5
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 8,
-  "fields": {
-    "participant": 7,
-    "team": 1
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 9,
-  "fields": {
-    "participant": 8,
-    "team": 5
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 10,
-  "fields": {
-    "participant": 9,
-    "team": 2
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 11,
-  "fields": {
-    "participant": 10,
-    "team": 8
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 12,
-  "fields": {
-    "participant": 10,
-    "team": 1
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 13,
-  "fields": {
-    "participant": 10,
-    "team": 2
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 14,
-  "fields": {
-    "participant": 11,
-    "team": 2
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 15,
-  "fields": {
-    "participant": 11,
-    "team": 4
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 16,
-  "fields": {
-    "participant": 12,
-    "team": 5
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 17,
-  "fields": {
-    "participant": 13,
-    "team": 1
+    "name": "Ongmo"
   }
 },
 {
@@ -1677,7 +1548,175 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 22,
+  "pk": 47,
+  "fields": {
+    "participant": 5,
+    "team": 8
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 48,
+  "fields": {
+    "participant": 5,
+    "team": 9
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 49,
+  "fields": {
+    "participant": 5,
+    "team": 1
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 50,
+  "fields": {
+    "participant": 6,
+    "team": 5
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 51,
+  "fields": {
+    "participant": 6,
+    "team": 14
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 52,
+  "fields": {
+    "participant": 7,
+    "team": 2
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 53,
+  "fields": {
+    "participant": 7,
+    "team": 5
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 54,
+  "fields": {
+    "participant": 7,
+    "team": 1
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 55,
+  "fields": {
+    "participant": 8,
+    "team": 5
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 56,
+  "fields": {
+    "participant": 9,
+    "team": 2
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 57,
+  "fields": {
+    "participant": 10,
+    "team": 8
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 58,
+  "fields": {
+    "participant": 10,
+    "team": 1
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 59,
+  "fields": {
+    "participant": 10,
+    "team": 2
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 60,
+  "fields": {
+    "participant": 11,
+    "team": 2
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 61,
+  "fields": {
+    "participant": 11,
+    "team": 4
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 62,
+  "fields": {
+    "participant": 12,
+    "team": 5
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 63,
+  "fields": {
+    "participant": 13,
+    "team": 1
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 64,
+  "fields": {
+    "participant": 27,
+    "team": 3
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 65,
+  "fields": {
+    "participant": 27,
+    "team": 1
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 66,
+  "fields": {
+    "participant": 27,
+    "team": 8
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 67,
+  "fields": {
+    "participant": 27,
+    "team": 5
+  }
+},
+{
+  "model": "dashboard.teampick",
+  "pk": 68,
   "fields": {
     "participant": 15,
     "team": 2
@@ -1685,7 +1724,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 23,
+  "pk": 69,
   "fields": {
     "participant": 15,
     "team": 5
@@ -1693,7 +1732,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 24,
+  "pk": 70,
   "fields": {
     "participant": 15,
     "team": 3
@@ -1701,7 +1740,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 25,
+  "pk": 71,
   "fields": {
     "participant": 16,
     "team": 7
@@ -1709,7 +1748,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 26,
+  "pk": 72,
   "fields": {
     "participant": 16,
     "team": 4
@@ -1717,7 +1756,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 27,
+  "pk": 73,
   "fields": {
     "participant": 17,
     "team": 14
@@ -1725,7 +1764,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 28,
+  "pk": 74,
   "fields": {
     "participant": 17,
     "team": 2
@@ -1733,7 +1772,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 29,
+  "pk": 75,
   "fields": {
     "participant": 17,
     "team": 6
@@ -1741,7 +1780,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 30,
+  "pk": 76,
   "fields": {
     "participant": 17,
     "team": 13
@@ -1749,7 +1788,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 31,
+  "pk": 77,
   "fields": {
     "participant": 18,
     "team": 3
@@ -1757,7 +1796,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 32,
+  "pk": 78,
   "fields": {
     "participant": 19,
     "team": 5
@@ -1765,7 +1804,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 33,
+  "pk": 79,
   "fields": {
     "participant": 20,
     "team": 2
@@ -1773,7 +1812,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 34,
+  "pk": 80,
   "fields": {
     "participant": 20,
     "team": 1
@@ -1781,7 +1820,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 35,
+  "pk": 81,
   "fields": {
     "participant": 21,
     "team": 2
@@ -1789,7 +1828,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 36,
+  "pk": 82,
   "fields": {
     "participant": 21,
     "team": 1
@@ -1797,7 +1836,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 37,
+  "pk": 83,
   "fields": {
     "participant": 22,
     "team": 5
@@ -1805,7 +1844,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 38,
+  "pk": 84,
   "fields": {
     "participant": 23,
     "team": 5
@@ -1813,7 +1852,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 39,
+  "pk": 85,
   "fields": {
     "participant": 24,
     "team": 5
@@ -1821,7 +1860,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 40,
+  "pk": 86,
   "fields": {
     "participant": 24,
     "team": 2
@@ -1829,7 +1868,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 41,
+  "pk": 87,
   "fields": {
     "participant": 25,
     "team": 4
@@ -1837,7 +1876,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 42,
+  "pk": 88,
   "fields": {
     "participant": 25,
     "team": 1
@@ -1845,7 +1884,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 43,
+  "pk": 89,
   "fields": {
     "participant": 25,
     "team": 6
@@ -1853,7 +1892,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 44,
+  "pk": 90,
   "fields": {
     "participant": 25,
     "team": 7
@@ -1861,7 +1900,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 45,
+  "pk": 91,
   "fields": {
     "participant": 26,
     "team": 7
@@ -1869,7 +1908,7 @@
 },
 {
   "model": "dashboard.teampick",
-  "pk": 46,
+  "pk": 92,
   "fields": {
     "participant": 26,
     "team": 4
