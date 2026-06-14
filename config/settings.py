@@ -79,7 +79,14 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Render CSRF
+# SSL/HTTPS Configuration for Render
+if not DEBUG:
+    # Render uses X-Forwarded-Proto header for SSL
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+# CSRF
 CSRF_TRUSTED_ORIGINS = [
     'https://*.onrender.com',
 ]
