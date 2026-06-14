@@ -30,9 +30,10 @@ def populate_picks():
     Karma Choeying Dolma:Spain,France
     Sonam Tshering:England,Argentina,Germany,Netherlands
     Kinley Bida:Netherlands,England
+    Uttam Bhujel:Portugal,France
+    Samten:Argentina
     """
-    TeamPick.objects.all().delete()
-    Participant.objects.all().delete()
+
     # Ensure all teams are in the database
     all_teams = set()
     for line in data.strip().split('\n'):
@@ -44,7 +45,8 @@ def populate_picks():
     for t_name in all_teams:
         Team.objects.get_or_create(name=t_name)
 
-    # Clear all participants and picks before repopulating
+    # Clear ALL old data first
+    TeamPick.objects.all().delete()
     Participant.objects.all().delete()
 
     for line in data.strip().split('\n'):
@@ -53,7 +55,6 @@ def populate_picks():
             p_name = p_name.strip()
             participant, _ = Participant.objects.get_or_create(name=p_name)
             
-            # Clear old picks for this participant to avoid duplicates
             TeamPick.objects.filter(participant=participant).delete()
             
             for t_name in teams_str.split(','):
