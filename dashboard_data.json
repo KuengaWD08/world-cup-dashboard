@@ -1,159 +1,5 @@
 [
 {
-  "model": "dashboard.participant",
-  "pk": 5,
-  "fields": {
-    "name": "Chenzo Zangmo"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 6,
-  "fields": {
-    "name": "Kuenga Wangchen Dorji"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 7,
-  "fields": {
-    "name": "Karma Sonam Lhamo"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 8,
-  "fields": {
-    "name": "Lhaden Wangda"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 9,
-  "fields": {
-    "name": "Pema Dregzel Wangda"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 10,
-  "fields": {
-    "name": "Bajay"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 11,
-  "fields": {
-    "name": "Kinley Digzel Dorji"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 12,
-  "fields": {
-    "name": "Wangmo"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 13,
-  "fields": {
-    "name": "Tshering Yangden"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 14,
-  "fields": {
-    "name": "Ongo"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 15,
-  "fields": {
-    "name": "Sonam Yuden"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 16,
-  "fields": {
-    "name": "Sonam Yugyel Gyeltshen"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 17,
-  "fields": {
-    "name": "Gyeltshen JOW"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 18,
-  "fields": {
-    "name": "Ap HAti"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 19,
-  "fields": {
-    "name": "Aum Bau"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 20,
-  "fields": {
-    "name": "Kinley Pem"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 21,
-  "fields": {
-    "name": "Pasang Dorji"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 22,
-  "fields": {
-    "name": "Tshering"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 23,
-  "fields": {
-    "name": "Chimi Pem"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 24,
-  "fields": {
-    "name": "Karma Choeying Dolma"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 25,
-  "fields": {
-    "name": "Sonam Tshering"
-  }
-},
-{
-  "model": "dashboard.participant",
-  "pk": 26,
-  "fields": {
-    "name": "Kinley Bida"
-  }
-},
-{
   "model": "dashboard.team",
   "pk": 1,
   "fields": {
@@ -447,7 +293,7 @@
   "model": "dashboard.team",
   "pk": 30,
   "fields": {
-    "name": "Curaçao",
+    "name": "CuraÃ§ao",
     "flag_url": null,
     "american_odds": 100,
     "is_eliminated": false
@@ -1505,6 +1351,160 @@
     "score_2": null,
     "date": "2026-06-28T02:00:00Z",
     "is_finished": false
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 5,
+  "fields": {
+    "name": "Chenzo Zangmo"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 6,
+  "fields": {
+    "name": "Kuenga Wangchen Dorji"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 7,
+  "fields": {
+    "name": "Karma Sonam Lhamo"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 8,
+  "fields": {
+    "name": "Lhaden Wangda"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 9,
+  "fields": {
+    "name": "Pema Dregzel Wangda"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 10,
+  "fields": {
+    "name": "Bajay"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 11,
+  "fields": {
+    "name": "Kinley Digzel Dorji"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 12,
+  "fields": {
+    "name": "Wangmo"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 13,
+  "fields": {
+    "name": "Tshering Yangden"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 14,
+  "fields": {
+    "name": "Ongo"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 15,
+  "fields": {
+    "name": "Sonam Yuden"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 16,
+  "fields": {
+    "name": "Sonam Yugyel Gyeltshen"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 17,
+  "fields": {
+    "name": "Gyeltshen JOW"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 18,
+  "fields": {
+    "name": "Ap HAti"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 19,
+  "fields": {
+    "name": "Aum Bau"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 20,
+  "fields": {
+    "name": "Kinley Pem"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 21,
+  "fields": {
+    "name": "Pasang Dorji"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 22,
+  "fields": {
+    "name": "Tshering"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 23,
+  "fields": {
+    "name": "Chimi Pem"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 24,
+  "fields": {
+    "name": "Karma Choeying Dolma"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 25,
+  "fields": {
+    "name": "Sonam Tshering"
+  }
+},
+{
+  "model": "dashboard.participant",
+  "pk": 26,
+  "fields": {
+    "name": "Kinley Bida"
   }
 },
 {
