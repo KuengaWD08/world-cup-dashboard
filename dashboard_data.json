@@ -1355,562 +1355,523 @@
 },
 {
   "model": "dashboard.participant",
-  "pk": 5,
+  "pk": 28,
   "fields": {
     "name": "Chenzo Zangmo"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 6,
+  "pk": 29,
   "fields": {
     "name": "Kuenga Wangchen Dorji"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 7,
+  "pk": 30,
   "fields": {
     "name": "Karma Sonam Lhamo"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 8,
+  "pk": 31,
   "fields": {
     "name": "Lhaden Wangda"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 9,
+  "pk": 32,
   "fields": {
     "name": "Pema Dregzel Wangda"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 10,
+  "pk": 33,
   "fields": {
     "name": "Bajay"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 11,
+  "pk": 34,
   "fields": {
     "name": "Kinley Digzel Dorji"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 12,
+  "pk": 35,
   "fields": {
     "name": "Wangmo"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 13,
+  "pk": 36,
   "fields": {
     "name": "Tshering Yangden"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 14,
+  "pk": 37,
   "fields": {
-    "name": "Ongo"
+    "name": "Ongmo"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 15,
+  "pk": 38,
   "fields": {
     "name": "Sonam Yuden"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 16,
+  "pk": 39,
   "fields": {
     "name": "Sonam Yugyel Gyeltshen"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 17,
+  "pk": 40,
   "fields": {
     "name": "Gyeltshen JOW"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 18,
+  "pk": 41,
   "fields": {
     "name": "Ap HAti"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 19,
+  "pk": 42,
   "fields": {
     "name": "Aum Bau"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 20,
+  "pk": 43,
   "fields": {
     "name": "Kinley Pem"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 21,
+  "pk": 44,
   "fields": {
     "name": "Pasang Dorji"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 22,
+  "pk": 45,
   "fields": {
     "name": "Tshering"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 23,
+  "pk": 46,
   "fields": {
     "name": "Chimi Pem"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 24,
+  "pk": 47,
   "fields": {
     "name": "Karma Choeying Dolma"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 25,
+  "pk": 48,
   "fields": {
     "name": "Sonam Tshering"
   }
 },
 {
   "model": "dashboard.participant",
-  "pk": 26,
+  "pk": 49,
   "fields": {
     "name": "Kinley Bida"
   }
 },
 {
-  "model": "dashboard.participant",
-  "pk": 27,
-  "fields": {
-    "name": "Ongmo"
-  }
-},
-{
   "model": "dashboard.teampick",
-  "pk": 18,
+  "pk": 93,
   "fields": {
-    "participant": 14,
-    "team": 3
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 19,
-  "fields": {
-    "participant": 14,
-    "team": 1
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 20,
-  "fields": {
-    "participant": 14,
+    "participant": 28,
     "team": 8
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 21,
+  "pk": 94,
   "fields": {
-    "participant": 14,
-    "team": 5
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 47,
-  "fields": {
-    "participant": 5,
-    "team": 8
-  }
-},
-{
-  "model": "dashboard.teampick",
-  "pk": 48,
-  "fields": {
-    "participant": 5,
+    "participant": 28,
     "team": 9
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 49,
+  "pk": 95,
   "fields": {
-    "participant": 5,
+    "participant": 28,
     "team": 1
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 50,
+  "pk": 96,
   "fields": {
-    "participant": 6,
+    "participant": 29,
     "team": 5
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 51,
+  "pk": 97,
   "fields": {
-    "participant": 6,
+    "participant": 29,
     "team": 14
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 52,
+  "pk": 98,
   "fields": {
-    "participant": 7,
+    "participant": 30,
     "team": 2
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 53,
+  "pk": 99,
   "fields": {
-    "participant": 7,
+    "participant": 30,
     "team": 5
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 54,
+  "pk": 100,
   "fields": {
-    "participant": 7,
+    "participant": 30,
     "team": 1
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 55,
+  "pk": 101,
   "fields": {
-    "participant": 8,
+    "participant": 31,
     "team": 5
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 56,
+  "pk": 102,
   "fields": {
-    "participant": 9,
+    "participant": 32,
     "team": 2
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 57,
+  "pk": 103,
   "fields": {
-    "participant": 10,
+    "participant": 33,
     "team": 8
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 58,
+  "pk": 104,
   "fields": {
-    "participant": 10,
+    "participant": 33,
     "team": 1
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 59,
+  "pk": 105,
   "fields": {
-    "participant": 10,
+    "participant": 33,
     "team": 2
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 60,
+  "pk": 106,
   "fields": {
-    "participant": 11,
+    "participant": 34,
     "team": 2
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 61,
+  "pk": 107,
   "fields": {
-    "participant": 11,
+    "participant": 34,
     "team": 4
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 62,
+  "pk": 108,
   "fields": {
-    "participant": 12,
+    "participant": 35,
     "team": 5
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 63,
+  "pk": 109,
   "fields": {
-    "participant": 13,
+    "participant": 36,
     "team": 1
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 64,
+  "pk": 110,
   "fields": {
-    "participant": 27,
+    "participant": 37,
     "team": 3
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 65,
+  "pk": 111,
   "fields": {
-    "participant": 27,
+    "participant": 37,
     "team": 1
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 66,
+  "pk": 112,
   "fields": {
-    "participant": 27,
+    "participant": 37,
     "team": 8
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 67,
+  "pk": 113,
   "fields": {
-    "participant": 27,
+    "participant": 37,
     "team": 5
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 68,
+  "pk": 114,
   "fields": {
-    "participant": 15,
+    "participant": 38,
     "team": 2
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 69,
+  "pk": 115,
   "fields": {
-    "participant": 15,
+    "participant": 38,
     "team": 5
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 70,
+  "pk": 116,
   "fields": {
-    "participant": 15,
+    "participant": 38,
     "team": 3
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 71,
+  "pk": 117,
   "fields": {
-    "participant": 16,
+    "participant": 39,
     "team": 7
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 72,
+  "pk": 118,
   "fields": {
-    "participant": 16,
+    "participant": 39,
     "team": 4
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 73,
+  "pk": 119,
   "fields": {
-    "participant": 17,
+    "participant": 40,
     "team": 14
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 74,
+  "pk": 120,
   "fields": {
-    "participant": 17,
+    "participant": 40,
     "team": 2
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 75,
+  "pk": 121,
   "fields": {
-    "participant": 17,
+    "participant": 40,
     "team": 6
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 76,
+  "pk": 122,
   "fields": {
-    "participant": 17,
+    "participant": 40,
     "team": 13
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 77,
+  "pk": 123,
   "fields": {
-    "participant": 18,
+    "participant": 41,
     "team": 3
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 78,
+  "pk": 124,
   "fields": {
-    "participant": 19,
+    "participant": 42,
     "team": 5
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 79,
+  "pk": 125,
   "fields": {
-    "participant": 20,
+    "participant": 43,
     "team": 2
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 80,
+  "pk": 126,
   "fields": {
-    "participant": 20,
+    "participant": 43,
     "team": 1
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 81,
+  "pk": 127,
   "fields": {
-    "participant": 21,
+    "participant": 44,
     "team": 2
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 82,
+  "pk": 128,
   "fields": {
-    "participant": 21,
+    "participant": 44,
     "team": 1
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 83,
+  "pk": 129,
   "fields": {
-    "participant": 22,
+    "participant": 45,
     "team": 5
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 84,
+  "pk": 130,
   "fields": {
-    "participant": 23,
+    "participant": 46,
     "team": 5
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 85,
+  "pk": 131,
   "fields": {
-    "participant": 24,
+    "participant": 47,
     "team": 5
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 86,
+  "pk": 132,
   "fields": {
-    "participant": 24,
+    "participant": 47,
     "team": 2
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 87,
+  "pk": 133,
   "fields": {
-    "participant": 25,
+    "participant": 48,
     "team": 4
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 88,
+  "pk": 134,
   "fields": {
-    "participant": 25,
+    "participant": 48,
     "team": 1
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 89,
+  "pk": 135,
   "fields": {
-    "participant": 25,
+    "participant": 48,
     "team": 6
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 90,
+  "pk": 136,
   "fields": {
-    "participant": 25,
+    "participant": 48,
     "team": 7
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 91,
+  "pk": 137,
   "fields": {
-    "participant": 26,
+    "participant": 49,
     "team": 7
   }
 },
 {
   "model": "dashboard.teampick",
-  "pk": 92,
+  "pk": 138,
   "fields": {
-    "participant": 26,
+    "participant": 49,
     "team": 4
   }
 }
