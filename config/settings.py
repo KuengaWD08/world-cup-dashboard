@@ -11,7 +11,8 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    '*.onrender.com',
+    '.onrender.com',
+    'world-cup-dashboard-x8x4.onrender.com',
 ]
 
 INSTALLED_APPS = [
