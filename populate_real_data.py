@@ -31,7 +31,8 @@ def populate_picks():
     Sonam Tshering:England,Argentina,Germany,Netherlands
     Kinley Bida:Netherlands,England
     """
-
+    TeamPick.objects.all().delete()
+    Participant.objects.all().delete()
     # Ensure all teams are in the database
     all_teams = set()
     for line in data.strip().split('\n'):
@@ -43,8 +44,8 @@ def populate_picks():
     for t_name in all_teams:
         Team.objects.get_or_create(name=t_name)
 
-    # Clear old data if needed or just add
-    # Participant.objects.all().delete() # Optional: keep it clean
+    # Clear all participants and picks before repopulating
+    Participant.objects.all().delete()
 
     for line in data.strip().split('\n'):
         if ':' in line:
@@ -57,8 +58,9 @@ def populate_picks():
             
             for t_name in teams_str.split(','):
                 t_name = t_name.strip()
-                team = Team.objects.get(name=t_name)
-                TeamPick.objects.create(participant=participant, team=team)
+                if t_name:
+                    team = Team.objects.get(name=t_name)
+                    TeamPick.objects.create(participant=participant, team=team)
 
     print("Family picks populated successfully!")
 
