@@ -2,6 +2,8 @@ import json
 from django.shortcuts import render
 from django.utils import timezone
 from django.db.models import Q
+from django.http import JsonResponse
+from django.core.management import call_command
 from .utils import calculate_probabilities
 from .models import Match, Team
 import pytz
@@ -77,3 +79,8 @@ def dashboard(request):
         'last_updated': timezone.now().strftime('%b %d, %Y %H:%M UTC'),
     }
     return render(request, 'dashboard/index.html', context)
+
+
+def sync_scores(request):
+    call_command('sync_scores')
+    return JsonResponse({'status': 'ok'})
