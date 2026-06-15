@@ -1,4 +1,5 @@
 import json
+import io
 from django.shortcuts import render
 from django.utils import timezone
 from django.db.models import Q
@@ -82,5 +83,9 @@ def dashboard(request):
 
 
 def sync_scores(request):
-    call_command('sync_scores')
-    return JsonResponse({'status': 'ok'})
+    try:
+        out = io.StringIO()
+        call_command('sync_scores', stdout=out, stderr=out)
+        return JsonResponse({'status': 'ok'})
+    except Exception as e:
+        return JsonResponse({'status': 'error', 'message': str(e)})
