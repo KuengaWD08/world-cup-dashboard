@@ -17,11 +17,11 @@ def populate_picks():
     Kinley Digzel Dorji:France,England
     Wangmo: Spain
     Tshering Yangden:Argentina
-    Ongmo:Brazil,Argentina,Portugal,Spain
+    Ongo:Brazil,Argentina,Portugal,Spain
     Sonam Yuden:France,Spain,Brazil
     Sonam Yugyel Gyeltshen:Netherlands,England
     Gyeltshen JOW:Norway,France,Germany,Belgium
-    Ap HAti:Brazil
+    Ap Hati:Brazil
     Aum Bau:Spain
     Kinley Pem: France,Argentina
     Pasang Dorji:France,Argentina
