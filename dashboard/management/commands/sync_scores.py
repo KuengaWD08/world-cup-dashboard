@@ -63,11 +63,23 @@ class Command(BaseCommand):
                 status = m['status']
                 score = m.get('score', {})
                 full_time = score.get('fullTime', {})
+                stage = m.get('stage', '')
 
                 if status == 'FINISHED':
                     match.score_1 = full_time.get('home')
                     match.score_2 = full_time.get('away')
                     match.is_finished = True
+
+                    # Mark losing team as eliminated for knockout stages
+                    if stage not in ('GROUP_STAGE', ''):
+                        if match.score_1 is not None and match.score_2 is not None:
+                            if match.score_1 > match.score_2:
+                                t2.is_eliminated = True
+                                t2.save()
+                            elif match.score_2 > match.score_1:
+                                t1.is_eliminated = True
+                                t1.save()
+
                 elif status in ('IN_PLAY', 'PAUSED'):
                     live = score.get('fullTime') or score.get('halfTime') or {}
                     match.score_1 = live.get('home')
